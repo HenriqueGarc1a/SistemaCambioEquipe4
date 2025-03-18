@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html>
+    
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
     <script src ="script.js" defer></script>
     <link  rel = "stylesheet" href="styles.css">
-
 </head>
+<header>
+    <h1>Conversor de Moedas</h1>
+</header>
 <body>
 
     <input id = "x1" type = "number">
@@ -45,9 +51,25 @@
     <button onclick="getCambio()">Press</button>
 
     <p id = "saida"></p>
-
     
+        <label for="valor">Quantia</label>
+        <input type="text" name="valor" id="valor">
 
+        <br>
+        <label for="moeda">Moeda:</label>
+        <select name="moeda" id="moeda">
+            <option value="dolar">Dólar</option>
+            <option value="euro">Euro</option>
+            <option value="libra">Libra</option>
+        </select>
+        <br>
+        <label for="converter">Converter para</label>
+        <select name="converter" id="converter">
+            <option value="dolar">Dólar</option>
+            <option value="euro">Euro</option>
+            <option value="libra">Libra</option>
+        </select>
+        
 
 </body>
 </html>
