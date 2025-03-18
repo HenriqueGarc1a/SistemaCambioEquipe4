@@ -19,6 +19,25 @@ async function getCotacao() {
   
 }
 
+async function getBandeiras() {
+  try {
+    
+    const response = await fetch("https://restcountries.com/v3.1/all");
+
+    if (!response.ok) {
+      throw new Error(`Erro HTTP! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data)
+
+  } catch (error) {
+    console.error("Erro ao buscar a taxa de câmbio:", error);
+  }
+
+ 
+
+}
+
 function setCambios(data){
 
   valores.push(eval(data.ARSUSD.bid))
@@ -108,6 +127,7 @@ function getPfix(x){
 
   
   getCotacao();
+  getBandeiras();
 
  
 
