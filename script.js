@@ -1,5 +1,7 @@
 valores = []
-
+pos = [124,131,222,2,108,47,200,186,203]
+flags = []
+index = 0
 async function getCotacao() {
     try {
       
@@ -27,8 +29,9 @@ async function getBandeiras() {
     if (!response.ok) {
       throw new Error(`Erro HTTP! Status: ${response.status}`);
     }
-    const data = await response.json();
-    console.log(data)
+    const dataB = await response.json();
+    
+    setFlags(dataB)
 
   } catch (error) {
     console.error("Erro ao buscar a taxa de câmbio:", error);
@@ -51,6 +54,36 @@ function setCambios(data){
   valores.push(eval(data.KRWUSD.bid))
   valores.push(1)
   
+}
+
+function setFlags(dataB){
+
+
+    for(let i=0 ;i<pos.length;i++){
+
+    flags.push(dataB[pos[i]].flags.png)
+    console.log(flags[i])
+    }
+
+    
+    
+
+
+}
+
+function troca(){
+
+
+    document.body.style.backgroundImage = `url(${flags[index]})`;
+
+    console.log(flags[index])
+    
+    if(index<flags.length-1)
+    index++;
+    else
+    index =0
+
+
 }
 
 function getCambio(){
