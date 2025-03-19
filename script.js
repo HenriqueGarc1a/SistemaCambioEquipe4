@@ -7,9 +7,16 @@ setEntrada = false; // false(input da direita e entrada) true(input da esquerda 
 // sempre que algo é digitado em algum input esse metodo e chamado;
 
 document.addEventListener('input', function(event){
-
       getCambio()
- 
+});
+
+document.getElementById('opcoes1').addEventListener('change', function(event){
+      document.getElementById('bandeira1').src = flags[document.getElementById('opcoes1').selectedIndex];
+
+});
+
+document.getElementById('opcoes2').addEventListener('change', function(event){
+      document.getElementById('bandeira2').src = flags[document.getElementById('opcoes2').selectedIndex];
 });
 
 // puxa dados da API dos cambios
@@ -77,6 +84,8 @@ function setFlags(dataB){
     flags.push(dataB[pos[i]].flags.png)
    
     }
+
+    flags.splice(5,0,'/Imagens/bandeira-uniao-europeia.webp')
 }
 
 
@@ -93,27 +102,24 @@ function getCambio(){
 
       // buscando index para vetor de valores 
 
-     select = document.getElementById("opcoes1");
-     entrada1 = select.selectedIndex
+      select = document.getElementById("opcoes1");
+      entrada1 = select.selectedIndex
 
-     select = document.getElementById("opcoes2");
-     entrada2 = select.selectedIndex
+      select = document.getElementById("opcoes2");
+      entrada2 = select.selectedIndex
 
      
-     x1= document.getElementById("input-quantia").value;
+      x1 = document.getElementById("input-quantia").value;
 
-     //regra de 3 basica
-     z=(valores[entrada1]*x1)/(valores[entrada2]);
+      z =(valores[entrada1]*x1)/(valores[entrada2]);
     
       w = valores[entrada1]/(valores[entrada2]);
-
-       
-        document.getElementById("input-conversão").value= z.toFixed(2);
+ 
+      document.getElementById("input-conversão").value = z.toFixed(2);
 
     }
-    else{
-
-      // buscando index para vetor de valores 
+    else
+    {
 
       select = document.getElementById("opcoes1");
       entrada1 = select.selectedIndex
@@ -127,16 +133,15 @@ function getCambio(){
       //regra de 3 basica
       z=(valores[entrada2]*x1)/(valores[entrada1]);
      
-       w = valores[entrada1]/(valores[entrada2]);
+      w = valores[entrada1]/(valores[entrada2]);
  
         
-       document.getElementById("input-quantia").value= z.toFixed(2);
+       document.getElementById("input-quantia").value = z.toFixed(2);
        
     }
 
       document.getElementById("saida").innerHTML = getPfix(entrada1)+" 1.00 "+" = "+getPfix(entrada2)+" "+w;
-
-   
+  
 }
 
 // retorna a abreviacao da moeda com base em x
@@ -207,11 +212,26 @@ function inverter() {
   document.getElementById("input-quantia").value = numero2;
   document.getElementById("input-conversão").value = numero1;
 
+  document.getElementById("bandeira1").src = flags[entrada2];
+  document.getElementById("bandeira2").src = flags[entrada1];
+
   getCambio();
 }
   
   getCotacao();
   getBandeiras();
+
+  setTimeout(start, 300);
+
+function start(){
+  document.getElementById('input-quantia').value = 1.00;
+  document.getElementById('opcoes1').selectedIndex = 9;
+  document.getElementById('opcoes2').selectedIndex = 2;
+  document.getElementById('input-conversão').value = (1/valores[2]).toFixed(2);
+  document.getElementById('saida').innerHTML = "USD 1.00 = BRL "+(1/valores[2]).toFixed(6);
+  document.getElementById('bandeira1').src = flags[9];
+  document.getElementById('bandeira2').src = flags[2];
+}
 
 
 
