@@ -1,7 +1,26 @@
+.titulo {
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+}
+
+body{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #5f5a5a;
+    margin: 0;
+    padding: 0;
+}
+
 div[class=container] {
-    background-color: lightgray;
-    width: 50%;
+    background-color: #03ba0f;
+    width: 500px;
     margin: auto;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 div[class=valores] {
