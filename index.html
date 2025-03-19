@@ -7,51 +7,67 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="valores">
-            <div class="input-grupo">
-                <label for="input-quantia">Quantia</label>
-                <div class="input">
-                    <input type="number" id="input-quantia" />
-                    <select id="opcoes1">
-                        <option><img>ARS</option>
-                        <option><img>AUD</option>
-                        <option><img>BRL</option>
-                        <option><img>CHF</option>
-                        <option><img>CAD</option>
-                        <option><img>EUR</option>
-                        <option><img>GBP</option>
-                        <option><img>JPY</option>
-                        <option><img>KRW</option>
-                        <option><img>USD</option>
-                    </select>
-                </div>
-            </div>
-            <img src="Imagens/arrow-left-right-fill.svg ">
-            <div class="input-grupo">
-                <label for="input-conversão">Converter para</label>
-                <div class="input">
-                    <input type="number" id="input-conversão" />
-                    <select id="opcoes2">
-                        <option><img>ARS</option>
-                        <option><img>AUD</option>
-                        <option><img>BRL</option>
-                        <option><img>CHF</option>
-                        <option><img>CAD</option>
-                        <option><img>EUR</option>
-                        <option><img>GBP</option>
-                        <option><img>JPY</option>
-                        <option><img>KRW</option>
-                        <option><img>USD</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="conversor">
-            <p id="conversao"></p>
-            <button onclick="getCambio()">Converter</button>
-        </div>
-    </div>
-    <script src="script.js"></script>
+
+    <button onclick="trocaB()">oi</button>
+    
+
+    <input onclick="trocaT()" id = "x1" type = "number" min="0">
+
+    <select id = "opcoes1"> 
+
+        
+        <option>ARS</option>
+        <option >AUD</option> 
+        <option >BRL</option> 
+        <option >CHF</option> 
+        <option >CAD</option> 
+        <option >EUR</option> 
+        <option >GBP</option> 
+        <option >JPY</option> 
+        <option >KRW</option>
+        <option >USD</option> 
+
+    </select>
+
+    <select id = "opcoes2"> 
+
+        
+        <option>ARS</option>
+        <option >AUD</option> 
+        <option >BRL</option> 
+        <option >CHF</option> 
+        <option >CAD</option> 
+        <option >EUR</option> 
+        <option >GBP</option> 
+        <option >JPY</option> 
+        <option >KRW</option>
+        <option >USD</option> 
+
+    </select>
+
+    <input id = "x2" type = "number" onclick="trocaT()">
+
+
+    <p id = "saida"></p>
+
+        <label for="valor">Quantia</label>
+        <input type="text" name="valor" id="valor">
+
+        <br>
+        <label for="moeda">Moeda:</label>
+        <select name="moeda" id="moeda">
+            <option value="dolar">Dólar</option>
+            <option value="euro">Euro</option>
+            <option value="libra">Libra</option>
+        </select>
+        <br>
+        <label for="converter">Converter para</label>
+        <select name="converter" id="converter">
+            <option value="dolar">Dólar</option>
+            <option value="euro">Euro</option>
+            <option value="libra">Libra</option>
+        </select>
+        
+
 </body>
 </html>
