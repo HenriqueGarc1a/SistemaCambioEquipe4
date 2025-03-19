@@ -101,7 +101,7 @@ function getCambio(){
 
     if(setEntrada){
 
-      // buscando index 
+      // buscando index para vetor de valores 
 
      select = document.getElementById("opcoes1");
      entrada1 = select.selectedIndex
@@ -112,6 +112,7 @@ function getCambio(){
      
      x1= document.getElementById("input-quantia").value;
 
+     //regra de 3 basica
      z=(valores[entrada1]*x1)/(valores[entrada2]);
     
       w = valores[entrada1]/(valores[entrada2]);
@@ -122,6 +123,8 @@ function getCambio(){
     }
     else{
 
+      // buscando index para vetor de valores 
+
       select = document.getElementById("opcoes1");
       entrada1 = select.selectedIndex
  
@@ -130,6 +133,8 @@ function getCambio(){
  
       
       x1= document.getElementById("input-conversão").value;
+      
+      //regra de 3 basica
       z=(valores[entrada2]*x1)/(valores[entrada1]);
      
        w = valores[entrada1]/(valores[entrada2]);
