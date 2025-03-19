@@ -1,16 +1,17 @@
-valores = []
-pos = [124,131,222,2,108,47,200,186,203]
-flags = []
-index = 0
-troca = false;
+valores = [] // vetor que ira armazena os valores em dolar;
+pos = [124,131,222,2,108,47,200,186,203] // vetor que armazena a posicao dos paises na resposta da API;
+flags = [] // vetor que ira armazenar os links das bandeiras;
+setEntrada = false; // false(input da direita e entrada) true(input da esquerda e entrada);
+
+// sempre que algo é digitado em algum input esse metodo e chamado;
 
 document.addEventListener('input', function(event){
-   
-  
-  getCambio()
- 
 
+      getCambio()
+ 
 });
+
+// puxa dados da API dos cambios
 
 async function getCotacao() {
     try {
@@ -20,6 +21,7 @@ async function getCotacao() {
       if (!response.ok) {
         throw new Error(`Erro HTTP! Status: ${response.status}`);
       }
+
       const data = await response.json();
       setCambios(data)
 
@@ -30,6 +32,8 @@ async function getCotacao() {
    
   
 }
+
+// puxa dados da API das bandeiras;
 
 async function getBandeiras() {
   try {
@@ -51,6 +55,9 @@ async function getBandeiras() {
 
 }
 
+// funcao que organiza os dados de conversao em um vetor(todos valores em dolar)
+// 0 - peso argentino, 1 - dolar australiano, 2 - real, 3 - franco suico, 4 - dolar canadense, 5 - euro, 6 - libra esterlina, 7 - iene japones, 8 - won sul- coreano;
+
 function setCambios(data){
 
   valores.push(eval(data.ARSUSD.bid))
@@ -66,6 +73,9 @@ function setCambios(data){
   
 }
 
+//funcao que coloca os links das imagens das bandeiras em um vetor;
+// 0 - argentina,1 - australia,2 - brasil, 3 - suica,4 - canada,5 - gra bretanha, 6 - japao, 7 - coreia do sul, 8 - estados unidos;
+
 function setFlags(dataB){
 
     
@@ -75,29 +85,23 @@ function setFlags(dataB){
    
     }
 
-    
-    
 
 
 }
 
-function trocaB(){
 
-
-    document.body.style.backgroundImage = `url(${flags[index]})`;
-    console.log(flags[index])
-
-    if(index<flags.length-1)
-    index++;
-    else
-    index =0
-
-
-}
+//  document.body.style.backgroundImage = `url(${flags[index]})`;  IMPORTANTE NAO APAGAR
+    
+  
+// funcao que realiza o cambio (chamada toda vez que um imput e atualizado)
 
 function getCambio(){
 
-    if(troca){
+    //if para verificar qual input e entrada e qual e saida
+
+    if(setEntrada){
+
+      // buscando index 
 
      select = document.getElementById("opcoes1");
      entrada1 = select.selectedIndex
@@ -194,13 +198,13 @@ function getPfix(x){
 
 function trocaT(){
 
-    if(troca){
+    if(setEntrada){
 
-      troca = false
+      setEntrada = false
     }
     else{
 
-      troca = true;
+      setEntrada = true;
     }
 
 }
