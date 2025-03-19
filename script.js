@@ -12,7 +12,6 @@ document.addEventListener('input', function(event){
 
 });
 
-
 async function getCotacao() {
     try {
       
@@ -73,7 +72,7 @@ function setFlags(dataB){
     for(let i=0 ;i<pos.length;i++){
 
     flags.push(dataB[pos[i]].flags.png)
-    console.log(flags[i])
+   
     }
 
     
@@ -99,7 +98,7 @@ function troca(){
 function getCambio(){
 
     if(troca){
-  
+
      select = document.getElementById("opcoes1");
      entrada1 = select.selectedIndex
 
@@ -108,6 +107,7 @@ function getCambio(){
 
      
      x1= document.getElementById("x1").value;
+
      z=(valores[entrada1]*x1)/(valores[entrada2]);
     
       w = valores[entrada1]/(valores[entrada2]);
@@ -134,6 +134,7 @@ function getCambio(){
        document.getElementById("x1").value= z.toFixed(2);
        
     }
+
       document.getElementById("saida").innerHTML = getPfix(entrada1)+" 1.00 "+" = "+getPfix(entrada2)+" "+w;
 
    
@@ -209,9 +210,6 @@ function trocaT(){
   getCotacao();
   getBandeiras();
 
-  
-
- 
 
 
   

@@ -16,7 +16,8 @@
 
     <button onclick="troca()">oi</button>
     
-    <input id = "x1" type = "number" onclick="trocaT()">
+
+    <input onclick="trocaT()" id = "x1" type = "number" min="0" onkeypress="return (!(event.charCode == 8 || (event.charCode >= 48) || (event.charCode >= 48 && event.charCode <= 57)))">
 
     <select id = "opcoes1"> 
 
@@ -51,6 +52,7 @@
     </select>
 
     <input id = "x2" type = "number" onclick="trocaT()">
+
 
     <button onclick="getCambio()">Press</button>
 
