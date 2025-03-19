@@ -106,14 +106,14 @@ function getCambio(){
      entrada2 = select.selectedIndex
 
      
-     x1= document.getElementById("x1").value;
+     x1= document.getElementById("input-quantia").value;
 
      z=(valores[entrada1]*x1)/(valores[entrada2]);
     
       w = valores[entrada1]/(valores[entrada2]);
 
        
-        document.getElementById("x2").value= z.toFixed(2);
+        document.getElementById("input-conversão").value= z.toFixed(2);
 
     }
     else{
@@ -125,13 +125,13 @@ function getCambio(){
       entrada2 = select.selectedIndex
  
       
-      x1= document.getElementById("x2").value;
+      x1= document.getElementById("input-conversão").value;
       z=(valores[entrada2]*x1)/(valores[entrada1]);
      
        w = valores[entrada1]/(valores[entrada2]);
  
         
-       document.getElementById("x1").value= z.toFixed(2);
+       document.getElementById("input-quantia").value= z.toFixed(2);
        
     }
 
