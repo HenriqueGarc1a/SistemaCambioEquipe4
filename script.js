@@ -2,6 +2,7 @@ valores = []
 pos = [124,131,222,2,108,47,200,186,203]
 flags = []
 index = 0
+troca = true
 async function getCotacao() {
     try {
       
@@ -62,7 +63,7 @@ function setFlags(dataB){
     for(let i=0 ;i<pos.length;i++){
 
     flags.push(dataB[pos[i]].flags.png)
-    console.log(flags[i])
+   
     }
 
     
@@ -87,7 +88,8 @@ function troca(){
 }
 
 function getCambio(){
-  
+
+    if(troca){
      select = document.getElementById("opcoes1");
      entrada1 = select.selectedIndex
 
@@ -98,12 +100,50 @@ function getCambio(){
      
      
       z=(valores[entrada1]*x1)/(valores[entrada2]);
+      w=(valores[entrada1])/(valores[entrada2]);
 
-     // z = z.toFixed(2)
+      z = z.toFixed(2)
+
+      document.getElementById("x2").value = z;
+    }
+    else{
+
+      select = document.getElementById("opcoes1");
+      entrada1 = select.selectedIndex
+ 
+      select = document.getElementById("opcoes2");
+      entrada2 = select.selectedIndex
+ 
+      x1= document.getElementById("x2").value;
+      
+      
+       z=(valores[entrada2]*x1)/(valores[entrada1]);
+       w=(valores[entrada1])/(valores[entrada2]);
+ 
+       z = z.toFixed(2)
+ 
+       document.getElementById("x1").value = z;
+ 
+    }
+
+
     
-    document.getElementById("saida").innerHTML = getPfix(entrada1)+" 1.00 "+" = "+getPfix(entrada2)+" "+z;
+      document.getElementById("saida").innerHTML = getPfix(entrada1)+" 1.00 "+" = "+getPfix(entrada2)+" "+w;
 
    
+}
+
+function trocaT(x){
+
+    if(x == 1){
+
+      troca = true;
+    }
+    else
+    troca = false;
+
+
+
 }
 
 
@@ -162,7 +202,13 @@ function getPfix(x){
   getCotacao();
   getBandeiras();
 
- 
+
+
+  setInterval(getCambio, 100);
+
+
+  
+  
 
 
   
