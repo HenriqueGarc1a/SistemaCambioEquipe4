@@ -1,3 +1,4 @@
+
 valores = [] // vetor que ira armazena os valores em dolar;
 pos = [124,131,222,2,108,47,200,186,203] // vetor que armazena a posicao dos paises na resposta da API;
 flags = [] // vetor que ira armazenar os links das bandeiras;
@@ -28,9 +29,6 @@ async function getCotacao() {
     } catch (error) {
       console.error("Erro ao buscar a taxa de câmbio:", error);
     }
-
-   
-  
 }
 
 // puxa dados da API das bandeiras;
@@ -50,9 +48,6 @@ async function getBandeiras() {
   } catch (error) {
     console.error("Erro ao buscar a taxa de câmbio:", error);
   }
-
- 
-
 }
 
 // funcao que organiza os dados de conversao em um vetor(todos valores em dolar)
@@ -77,16 +72,11 @@ function setCambios(data){
 // 0 - argentina,1 - australia,2 - brasil, 3 - suica,4 - canada,5 - gra bretanha, 6 - japao, 7 - coreia do sul, 8 - estados unidos;
 
 function setFlags(dataB){
-
-    
     for(let i=0 ;i<pos.length;i++){
 
     flags.push(dataB[pos[i]].flags.png)
    
     }
-
-
-
 }
 
 
@@ -146,55 +136,38 @@ function getCambio(){
 
 
 function getPfix(x){
-
   switch(x){
-
     case 0:
       return "ARS";
-    break;
 
     case 1:
       return "AUD";
-    break;
 
     case 2:
       return "BRL";
-    break;
 
     case 3:
       return "CHF";
-    break;
 
     case 4:
       return "CAD";
-    break;
 
     case 5:
       return "EUR";
-    break;
 
     case 6:
       return "GBP";
-    break;
 
     case 7:
       return "JPY";
-    break;
 
     case 8:
       return "KRW";
-    break;
 
     case 9:
       return "USD";
-    break;
-
   }
-
-
-
 }
-
 
 function trocaT(){
 
