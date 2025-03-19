@@ -59,6 +59,10 @@ button {
     max-height: min-content;
 }
 
+#borderless {
+    border: 0;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

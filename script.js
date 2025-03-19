@@ -209,7 +209,22 @@ function trocaT(){
 
 }
 
+function inverter() {
+  select = document.getElementById("opcoes1");
+  entrada1 = select.selectedIndex
+  numero1 = document.getElementById("input-quantia").value;
 
+  select = document.getElementById("opcoes2");
+  entrada2 = select.selectedIndex
+  numero2 = document.getElementById("input-conversão").value;
+
+  document.getElementById("opcoes1").selectedIndex = entrada2;
+  document.getElementById("opcoes2").selectedIndex = entrada1;
+  document.getElementById("input-quantia").value = numero2;
+  document.getElementById("input-conversão").value = numero1;
+
+  getCambio();
+}
   
   getCotacao();
   getBandeiras();
