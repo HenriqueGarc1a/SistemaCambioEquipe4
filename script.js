@@ -139,6 +139,8 @@ function getCambio(){
    
 }
 
+// retorna a abreviacao da moeda com base em x
+
 
 function getPfix(x){
   switch(x){
@@ -174,6 +176,8 @@ function getPfix(x){
   }
 }
 
+// alterna entre qual input e entrada e qual e saida
+
 function trocaT(){
 
     if(setEntrada){
@@ -186,6 +190,8 @@ function trocaT(){
     }
 
 }
+
+
 
 function inverter() {
   select = document.getElementById("opcoes1");
