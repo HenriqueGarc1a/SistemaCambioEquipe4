@@ -12,7 +12,7 @@
             <div class="input-grupo">
                 <label for="input-quantia">Quantia</label>
                 <div class="input">
-                    <input type="number" id="input-quantia" onclick="trocaT()" />
+                    <input type="number" id="input-quantia" onclick="trocaT()" type="number" min="0" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46)"; />
                     <select id="opcoes1">
                         <option><img>ARS</option>
                         <option><img>AUD</option>
@@ -31,7 +31,7 @@
             <div class="input-grupo">
                 <label for="input-conversão">Converter para</label>
                 <div class="input">
-                    <input type="number" id="input-conversão" onclick="trocaT()" />
+                    <input type="number" id="input-conversão" onclick="trocaT()" type="number" min="0"onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57)|| event.charCode == 46)"; />
                     <select id="opcoes2">
                         <option><img>ARS</option>
                         <option><img>AUD</option>
