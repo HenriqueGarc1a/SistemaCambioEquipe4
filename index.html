@@ -26,7 +26,7 @@
                         <option><img>BRL</option>
                         <option><img>CHF</option>
                         <option><img>CAD</option>
-                        <option><img src="Imagens/bandeira-uniao-europeia.webp">EUR</option>
+                        <option><img>EUR</option>
                         <option><img>GBP</option>
                         <option><img>JPY</option>
                         <option><img>KRW</option>
@@ -34,7 +34,9 @@
                     </select>
                 </div>
             </div>
-            <img src="Imagens/arrow-left-right-fill.svg ">
+
+            <button id="borderless"><img src="Imagens/arrow-left-right-fill.svg " onclick="inverter()"></button>
+
             <div class="input-grupo">
                 <label for="input-conversão">Converter para</label>
                 <div class="input">
@@ -54,9 +56,11 @@
                 </div>
             </div>
         </div>
+
         <div class="conversor">
             <p id="saida"></p>
         </div>
+        
     </div>
     <script src="script.js"></script>
 </body>
