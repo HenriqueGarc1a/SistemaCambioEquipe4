@@ -81,7 +81,7 @@ function setFlags(dataB){
 
 }
 
-function troca(){
+function trocaB(){
 
 
     document.body.style.backgroundImage = `url(${flags[index]})`;
