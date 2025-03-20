@@ -3,7 +3,7 @@ valores = [] // vetor que ira armazena os valores em dolar;
 pos = [124,131,222,2,108,47,200,186,203] // vetor que armazena a posicao dos paises na resposta da API;
 flags = [] // vetor que ira armazenar os links das bandeiras;
 setEntrada = false; // false(input da direita e entrada) true(input da esquerda e entrada);
-
+flutuaco = [[],[]]; // matriz que guarda as datas e os valores do dolar para real no tempo
 // sempre que algo é digitado em algum input esse metodo e chamado;
 
 document.addEventListener('input', function(event){
@@ -37,6 +37,52 @@ async function getCotacao() {
       console.error("Erro ao buscar a taxa de câmbio:", error);
     }
 }
+
+async function getFlutuacao() {
+  try {
+    
+    const response = await fetch("https://economia.awesomeapi.com.br/json/daily/USD-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0");
+
+    if (!response.ok) {
+      throw new Error(`Erro HTTP! Status: ${response.status}`);
+    }
+
+    const dataF = await response.json();
+    
+    setMatrix(dataF);
+    
+  } catch (error) {
+    console.error("Erro ao buscar a taxa de câmbio:", error);
+  }
+}
+
+
+function setMatrix(dataF){
+
+
+     for(let i = 0;i<360;i++){
+
+
+      flutuaco[0][i] = eval(dataF[i].bid);
+
+     }
+    
+     for(let i = 0;i<360;i++){
+
+
+      flutuaco[1][i] = eval(dataF[i].timestamp);
+      
+      flutuaco[1][i] *= 1000;
+
+      flutuaco[1][i] = new Date(flutuaco[1][i]).toLocaleString();
+
+      flutuaco[1][i] = flutuaco[1][i].slice(0,10)
+
+     }
+
+
+}
+
 
 // puxa dados da API das bandeiras;
 
@@ -220,6 +266,7 @@ function inverter() {
   
   getCotacao();
   getBandeiras();
+  getFlutuacao() 
 
   setTimeout(start, 300);
   

@@ -63,6 +63,11 @@ input, select {
     border: 0;
 }
 
+select:hover{
+
+    cursor: pointer;
+}
+
 button {
     border-radius: 50%;
     border: transparent;
