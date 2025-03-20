@@ -5,7 +5,7 @@
 }
 
 #botao-troca{
-    margin-top: 22px;
+    margin-top: 36px;
     vertical-align: middle;
     margin-left: 10px;
     margin-right: 10px;
@@ -70,8 +70,8 @@ div[class=input-grupo] {
 div[class=input] {
     display: flex;
     border-radius: 6px;
-    border: 3px solid #128A5A;
-    background-color: #03ba0f;
+    border: 1px solid #000000;
+    background-color: #ffffff;
     margin-top: 10px;
 }
 
