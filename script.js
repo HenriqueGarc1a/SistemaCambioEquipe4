@@ -3,10 +3,11 @@ valores = [] // vetor que ira armazena os valores em dolar;
 pos = [124,131,222,2,108,47,200,186,203] // vetor que armazena a posicao dos paises na resposta da API;
 flags = [] // vetor que ira armazenar os links das bandeiras;
 setEntrada = false; // false(input da direita e entrada) true(input da esquerda e entrada);
+flutuacoDiaT = [];
 flutuacoDia = [];
 flutuacoValor = [];
-eixoX = [];
-eixoY = [];
+var eixoX;
+var eixoY;
  // matriz que guarda as datas e os valores do dolar para real no tempo
 // sempre que algo é digitado em algum input esse metodo e chamado;
 
@@ -77,6 +78,7 @@ function setMatrix(dataF){
     
      for(let i = 359;i>=0;i--){
 
+      flutuacoDiaT[359-i] = 359-i;
 
       flutuacoDia[359-i]  = eval(dataF[i].timestamp);
       
@@ -273,14 +275,9 @@ function inverter() {
   getCambio();
 }
 
-function setPeriodo(x,y){
+function setPeriodo(x){
 
-  console.log(flutuacoDia);
-
-  flutuacoDia = eixoX.splice(x,y);
-  flutuacoValor = eixoY.splice(x,y);
-
-  console.log(eixoX);
+  
   chart.update()
 
 }
@@ -290,10 +287,10 @@ function setPeriodo(x,y){
 
 const ctx = document.getElementById("myChart").getContext("2d");
 
-const chart = new Chart(ctx, {
+chart = new Chart(ctx, {
   type: "line",
   data: {
-    labels: flutuacoDia, // Certifique-se de que tem 360 elementos
+    labels: flutuacoDiaT, // Certifique-se de que tem 360 elementos
     datasets: [{
       pointRadius: 0,
       fill: false,
@@ -308,11 +305,12 @@ const chart = new Chart(ctx, {
       legend: { display: true }
     },
     scales: {
-      x: {
-        reverse: false  // Inverte o eixo X
-    }
+     
+      xAxes: [{ticks: {min: 0, max:359}}]
+     
     }
     ,
+  
   }
 });
 
@@ -330,9 +328,6 @@ const chart = new Chart(ctx, {
   
 
 function start(){
-  eixoX = flutuacoDia;
-  eixoY = flutuacoValor;
-  console.log(eixoX)
   chart.update()
   document.getElementById('input-quantia').value = 1.00;
   document.getElementById('opcoes1').selectedIndex = 9;
