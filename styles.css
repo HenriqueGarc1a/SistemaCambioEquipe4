@@ -56,6 +56,7 @@ div[class=input] {
     border-radius: 6px;
     border: 3px solid #128A5A;
     background-color: #03ba0f;
+    margin-top: 10px;
 }
 
 input, select {
@@ -66,7 +67,6 @@ input, select {
 }
 
 select:hover{
-
     cursor: pointer;
 }
 
@@ -77,9 +77,8 @@ button {
     background-image: url(Imagens/arrow-left-right-fill.svg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 40px;
-    width: 40px;
-
+    height: 50px;
+    width: 50px;
 }
 
 button:hover {
@@ -105,4 +104,13 @@ input[type=number] {
         width: 45px;
         height: 30px;
         margin-top: 8px;
+}
+
+label {
+    font-size: 1.4rem;
+}
+
+p {
+    font-size: 1.6rem;
+    
 }
