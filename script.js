@@ -6,8 +6,7 @@ setEntrada = false; // false(input da direita e entrada) true(input da esquerda 
 flutuacoDiaT = [];
 flutuacoDia = [];
 flutuacoValor = [];
-var eixoX;
-var eixoY;
+initgraph = 0;
  // matriz que guarda as datas e os valores do dolar para real no tempo
 // sempre que algo é digitado em algum input esse metodo e chamado;
 
@@ -277,7 +276,8 @@ function inverter() {
 
 function setPeriodo(x){
 
-  
+  chart.options.scales.xAxes[0].ticks.min = x;
+
   chart.update()
 
 }
@@ -307,7 +307,7 @@ chart = new Chart(ctx, {
     },
     scales: {
      
-      xAxes: [{ticks: {min: 0, max:359}}]
+      xAxes: [{ticks: {min: initgraph, max:359}}]
      
     }
     ,
