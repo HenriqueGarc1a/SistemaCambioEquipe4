@@ -183,9 +183,9 @@ function getPfix(x){
 
 // alterna entre qual input e entrada e qual e saida
 
-function trocaT(){
+function trocaT(x){
 
-    if(setEntrada){
+    if(x == 1){
 
       setEntrada = false
     }
@@ -222,6 +222,7 @@ function inverter() {
   getBandeiras();
 
   setTimeout(start, 300);
+  
 
 function start(){
   document.getElementById('input-quantia').value = 1.00;
