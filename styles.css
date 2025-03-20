@@ -4,6 +4,22 @@
     font-size: 30px;
 }
 
+#botao-troca{
+    margin-top: 36px;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#saida{
+    font-size: 20px;
+    font-weight: 600;
+}
+.destaque-cor{
+    color: #33ff00; 
+    font-weight: bold; 
+}
+
 header {
     top: 100px;
     position: absolute;
@@ -28,8 +44,8 @@ body{
 }
 
 div[class=container] {
-    background-color: #B2FA63;
-    width: 600px;
+    background-color: #ffffff;
+    width: fit-content;
     margin: auto;
     padding: 20px;
     border-radius: 10px;
@@ -42,7 +58,7 @@ div[class=valores] {
 
 div[class=conversor] {
     display: flex;
-    justify-content: center;
+    align-items: center;
     margin-top: 10px;
     justify-content: space-evenly;
 }
@@ -54,17 +70,20 @@ div[class=input-grupo] {
 div[class=input] {
     display: flex;
     border-radius: 6px;
-    border: 3px solid #128A5A;
-    background-color: #03ba0f;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    margin-top: 10px;
 }
 
 input, select {
     background: none;
     border: 0;
+    font-size: 1.8rem;
+    font-weight: 400;
+    padding: 8px;
 }
 
 select:hover{
-
     cursor: pointer;
 }
 
@@ -75,9 +94,8 @@ button {
     background-image: url(Imagens/arrow-left-right-fill.svg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 40px;
-    width: 40px;
-
+    height: 50px;
+    width: 50px;
 }
 
 button:hover {
@@ -100,6 +118,16 @@ input[type=number] {
 }
 
 #bandeira1, #bandeira2 {
-        width: 30px;
-        height: 20px;
+        width: 45px;
+        height: 30px;
+        margin-top: 8px;
+}
+
+label {
+    font-size: 1.4rem;
+}
+
+p {
+    font-size: 1.6rem;
+    
 }
