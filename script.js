@@ -3,7 +3,11 @@ valores = [] // vetor que ira armazena os valores em dolar;
 pos = [124,131,222,2,108,47,200,186,203] // vetor que armazena a posicao dos paises na resposta da API;
 flags = [] // vetor que ira armazenar os links das bandeiras;
 setEntrada = false; // false(input da direita e entrada) true(input da esquerda e entrada);
-flutuaco = [[],[]]; // matriz que guarda as datas e os valores do dolar para real no tempo
+flutuacoDia = [];
+flutuacoValor = [];
+eixoX = [];
+eixoY = [];
+ // matriz que guarda as datas e os valores do dolar para real no tempo
 // sempre que algo é digitado em algum input esse metodo e chamado;
 
 document.addEventListener('input', function(event){
@@ -63,21 +67,23 @@ function setMatrix(dataF){
      for(let i = 359;i>=0;i--){
 
 
-      flutuaco[0][i] = eval(dataF[i].bid);
+      flutuacoValor[359-i] = eval(dataF[i].bid);
       
      }
+
     
      for(let i = 359;i>=0;i--){
 
 
-      flutuaco[1][i] = eval(dataF[i].timestamp);
+      flutuacoDia[359-i]  = eval(dataF[i].timestamp);
       
-      flutuaco[1][i] *= 1000;
+      flutuacoDia[359-i]  *= 1000;
 
-      flutuaco[1][i] = new Date(flutuaco[1][i]).toLocaleString();
+      flutuacoDia[359-i]  = new Date(flutuacoDia[359-i]).toLocaleString();
 
-      flutuaco[1][i] = flutuaco[1][i].slice(0,10)
+      flutuacoDia[359-i]  = flutuacoDia[359-i].slice(0,10)
 
+    
       
      }
 
@@ -264,6 +270,55 @@ function inverter() {
 
   getCambio();
 }
+
+function setPeriodo(x,y){
+
+  console.log(flutuacoDia);
+
+  flutuacoDia = eixoX.splice(x,y);
+  flutuacoValor = eixoY.splice(x,y);
+
+  console.log(eixoX);
+  chart.update()
+
+}
+
+
+
+
+const ctx = document.getElementById("myChart").getContext("2d");
+
+const chart = new Chart(ctx, {
+  type: "line",
+  data: {
+    labels: flutuacoDia, // Certifique-se de que tem 360 elementos
+    datasets: [{
+      pointRadius: 0,
+      fill: false,
+      tension: 0, // Em versões recentes, use `tension` em vez de `lineTension`
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgb(0, 255, 47)",
+      data: flutuacoValor // Certifique-se de que tem 360 elementos
+    }]
+  },
+  options: {
+    plugins: {
+      legend: { display: true }
+    },
+    scales: {
+      x: {
+        reverse: false  // Inverte o eixo X
+    }
+    }
+    ,
+  }
+});
+
+
+
+
+
+
   
   getCotacao();
   getBandeiras();
@@ -273,6 +328,10 @@ function inverter() {
   
 
 function start(){
+  eixoX = flutuacoDia;
+  eixoY = flutuacoValor;
+  console.log(eixoX)
+  chart.update()
   document.getElementById('input-quantia').value = 1.00;
   document.getElementById('opcoes1').selectedIndex = 9;
   document.getElementById('opcoes2').selectedIndex = 2;
