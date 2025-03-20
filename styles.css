@@ -4,6 +4,22 @@
     font-size: 30px;
 }
 
+#botao-troca{
+    margin-top: 22px;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#saida{
+    font-size: 20px;
+    font-weight: 600;
+}
+.destaque-cor{
+    color: #33ff00; 
+    font-weight: bold; 
+}
+
 header {
     top: 100px;
     position: absolute;
@@ -28,7 +44,7 @@ body{
 }
 
 div[class=container] {
-    background-color: #B2FA63;
+    background-color: #ffffff;
     width: fit-content;
     margin: auto;
     padding: 20px;
@@ -42,7 +58,7 @@ div[class=valores] {
 
 div[class=conversor] {
     display: flex;
-    justify-content: center;
+    align-items: center;
     margin-top: 10px;
     justify-content: space-evenly;
 }
@@ -63,6 +79,7 @@ input, select {
     background: none;
     border: 0;
     font-size: 1.8rem;
+    font-weight: 400;
     padding: 8px;
 }
 

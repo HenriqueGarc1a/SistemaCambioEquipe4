@@ -6,9 +6,12 @@ setEntrada = false; // false(input da direita e entrada) true(input da esquerda 
 flutuaco = [[],[]]; // matriz que guarda as datas e os valores do dolar para real no tempo
 // sempre que algo é digitado em algum input esse metodo e chamado;
 
+
 document.addEventListener('input', function(event){
       getCambio()
+      
 });
+
 
 document.getElementById('opcoes1').addEventListener('change', function(event){
       document.getElementById('bandeira1').src = flags[document.getElementById('opcoes1').selectedIndex];
@@ -187,8 +190,7 @@ function getCambio(){
        
     }
 
-      document.getElementById("saida").innerHTML = getPfix(entrada1)+" 1.00 "+" = "+getPfix(entrada2)+" "+w;
-  
+    document.getElementById("saida").innerHTML = `${getPfix(entrada1)} 1.00 = <span class="destaque-cor">${getPfix(entrada2)} ${w.toFixed(2)}</span>`;  
 }
 
 // retorna a abreviacao da moeda com base em x
@@ -277,9 +279,9 @@ function start(){
   document.getElementById('opcoes1').selectedIndex = 9;
   document.getElementById('opcoes2').selectedIndex = 2;
   document.getElementById('input-conversão').value = (1/valores[2]).toFixed(2);
-  document.getElementById('saida').innerHTML = "USD 1.00 = BRL "+(1/valores[2]).toFixed(6);
   document.getElementById('bandeira1').src = flags[9];
   document.getElementById('bandeira2').src = flags[2];
+  document.getElementById('saida').innerHTML = `USD 1.00 = <span class="destaque-cor">BRL ${(1 / valores[2]).toFixed(6)}</span>`;
 }
 
 
