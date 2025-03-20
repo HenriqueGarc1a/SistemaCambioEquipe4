@@ -13,12 +13,6 @@
 
 
 <body>
-
-
-    <button  onclick="setPeriodo(0,359)">oi</button>
-    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-    
-
     <header>
         <h1>Conversor de Moedas</h1>
     </header>
@@ -75,8 +69,17 @@
         <div class="conversor">
             <p id="saida"><span class="destaque-cor"></span></p>
         </div>
-        
+    </div>    
+
+    <div class="canvas-container">
+        <button  onclick="setPeriodo(0,359)">oi</button>
+        <canvas id="myChart" style="width:100%;min-width:1000px"></canvas>
     </div>
+
     <script src="script.js"></script>
 </body>
+
+<footer>
+    
+</footer>
 </html>
