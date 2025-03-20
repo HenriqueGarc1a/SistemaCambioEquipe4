@@ -60,14 +60,14 @@ async function getFlutuacao() {
 function setMatrix(dataF){
 
 
-     for(let i = 0;i<360;i++){
+     for(let i = 359;i>=0;i--){
 
 
       flutuaco[0][i] = eval(dataF[i].bid);
-
+      
      }
     
-     for(let i = 0;i<360;i++){
+     for(let i = 359;i>=0;i--){
 
 
       flutuaco[1][i] = eval(dataF[i].timestamp);
@@ -78,6 +78,7 @@ function setMatrix(dataF){
 
       flutuaco[1][i] = flutuaco[1][i].slice(0,10)
 
+      
      }
 
 
