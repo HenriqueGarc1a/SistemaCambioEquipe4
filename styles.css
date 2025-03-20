@@ -29,7 +29,7 @@ body{
 
 div[class=container] {
     background-color: #B2FA63;
-    width: 600px;
+    width: fit-content;
     margin: auto;
     padding: 20px;
     border-radius: 10px;
@@ -61,6 +61,8 @@ div[class=input] {
 input, select {
     background: none;
     border: 0;
+    font-size: 1.8rem;
+    padding: 8px;
 }
 
 select:hover{
@@ -100,6 +102,7 @@ input[type=number] {
 }
 
 #bandeira1, #bandeira2 {
-        width: 30px;
-        height: 20px;
+        width: 45px;
+        height: 30px;
+        margin-top: 8px;
 }
