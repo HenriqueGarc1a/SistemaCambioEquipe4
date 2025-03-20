@@ -295,14 +295,15 @@ chart = new Chart(ctx, {
       pointRadius: 0,
       fill: false,
       tension: 0, // Em versões recentes, use `tension` em vez de `lineTension`
-      backgroundColor: "rgba(0,0,255,1.0)",
-      borderColor: "rgb(0, 255, 47)",
+      borderColor: "rgb(0, 0, 0)",
       data: flutuacoValor // Certifique-se de que tem 360 elementos
     }]
   },
   options: {
     plugins: {
-      legend: { display: true }
+      legend: {
+        display: true,
+      }
     },
     scales: {
      
