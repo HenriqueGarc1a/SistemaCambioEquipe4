@@ -307,6 +307,9 @@ chart = new Chart(ctx, {
       xAxes: [{ticks: {min: 0, max:359,
         display: false, 
         fontSize: 0
+      }}],
+      yAxes: [{gridLines: {
+        display: false
       }}]
     }
   }
