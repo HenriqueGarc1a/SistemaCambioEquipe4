@@ -281,13 +281,10 @@ function inverter() {
   getCambio();
 }
 
-function setPeriodo(x){
-
-  chart.options.scales.xAxes[0].ticks.min = x;
+function setPeriodo(x) {
+  chart.options.scales.x.min = x;
   document.getElementById('datainicio').innerHTML = flutuacoDia[x];
-
-  chart.update()
-
+  chart.update();
 }
 
 
@@ -302,32 +299,40 @@ chart = new Chart(ctx, {
     datasets: [{
       label: "",
       pointRadius: 0,
-      fill: false,
+      fill: false, // Continua válido
       tension: 0, 
       borderColor: "#009CDE",
       data: flutuacoValor 
     }]
   },
   options: {
-    legend: {
-      display: false 
-   },
-    scales: {
-      xAxes: [{ticks: {min: 0, max:359,
-        display: false, 
-        fontSize: 0
-      }}],
-      yAxes: [{gridLines: {
+    plugins: {
+      legend: {
         display: false
-      }, ticks: {
-        callback: function(value, index, values) {
-          return "R$" + value.toFixed(2);
+      }
+    },
+    scales: {
+      x: { // Antes era xAxes
+        ticks: {
+          min: 0,
+          max: 359,
+          display: false,
+          fontSize: 0 // Removido no Chart.js 3+, mas pode ser substituído por `font.size`
+        }
+      },
+      y: { // Antes era yAxes
+        grid: {
+          display: false
         },
-        fontColor: "#0E141B"
-      }}]
+        ticks: {
+          callback: function(value) {
+            return "R$" + value.toFixed(2);
+          },
+          color: "#0E141B" // Substitui fontColor
+        }
+      }
     }
   }
-
 });
 
 function s(x) {
