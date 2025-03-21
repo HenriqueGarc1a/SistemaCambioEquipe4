@@ -30,7 +30,11 @@ document.getElementById('opcoes2').addEventListener('change', function(event){
 document.getElementById('opcoes3').addEventListener('change', function(event){
     getFlutuacao(document.getElementById('opcoes3').selectedIndex)
     chart.update();
-    setTimeout(chart.update,200);
+    setTimeout(() => {
+      
+      chart.update();
+
+    }, 200);
 });
 
 // puxa dados da API dos cambios

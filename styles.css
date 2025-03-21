@@ -222,7 +222,7 @@ div[class=canvas-container] {
 
 div[class=periodo] {
     display: inline-grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     
     
 }
