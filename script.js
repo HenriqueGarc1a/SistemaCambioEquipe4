@@ -6,8 +6,10 @@ setEntrada = false; // false(input da direita e entrada) true(input da esquerda 
 flutuacoDiaT = [];
 flutuacoDia = [];
 flutuacoValor = [];
+g = ["https://economia.awesomeapi.com.br/json/daily/ARS-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/AUD-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/CHF-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/CAD-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/EUR-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/GBP-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/JPY-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/KRW-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/USD-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0"]
  // matriz que guarda as datas e os valores do dolar para real no tempo
 // sempre que algo é digitado em algum input esse metodo e chamado;
+
 
 
 document.addEventListener('input', function(event){
@@ -23,6 +25,12 @@ document.getElementById('opcoes1').addEventListener('change', function(event){
 
 document.getElementById('opcoes2').addEventListener('change', function(event){
       document.getElementById('bandeira2').src = flags[document.getElementById('opcoes2').selectedIndex];
+});
+
+document.getElementById('opcoes3').addEventListener('change', function(event){
+    getFlutuacao(document.getElementById('opcoes3').selectedIndex)
+    chart.update();
+    setTimeout(chart.update,200);
 });
 
 // puxa dados da API dos cambios
@@ -44,10 +52,10 @@ async function getCotacao() {
     }
 }
 
-async function getFlutuacao() {
+async function getFlutuacao(i) {
   try {
     
-    const response = await fetch("https://economia.awesomeapi.com.br/json/daily/USD-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0");
+    const response = await fetch(g[i]);
 
     if (!response.ok) {
       throw new Error(`Erro HTTP! Status: ${response.status}`);
@@ -277,6 +285,7 @@ function setPeriodo(x){
 
   chart.options.scales.xAxes[0].ticks.min = x;
   document.getElementById('datainicio').innerHTML = flutuacoDia[x];
+
   chart.update()
 
 }
@@ -339,7 +348,7 @@ function s(x) {
   
   getCotacao();
   getBandeiras();
-  getFlutuacao() 
+  getFlutuacao(8) 
 
   setTimeout(start, 300);
   
