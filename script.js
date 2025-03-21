@@ -295,7 +295,7 @@ chart = new Chart(ctx, {
       pointRadius: 0,
       fill: false,
       tension: 0, 
-      borderColor: "rgb(0, 0, 0)",
+      borderColor: "#009CDE",
       data: flutuacoValor 
     }]
   },
@@ -307,6 +307,14 @@ chart = new Chart(ctx, {
       xAxes: [{ticks: {min: 0, max:359,
         display: false, 
         fontSize: 0
+      }}],
+      yAxes: [{gridLines: {
+        display: false
+      }, ticks: {
+        callback: function(value, index, values) {
+          return "R$" + value.toFixed(2);
+        },
+        fontColor: "#0E141B"
       }}]
     }
   }
