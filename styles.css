@@ -139,6 +139,8 @@ input[type=number] {
         width: 45px;
         height: 30px;
         margin-top: 8px;
+        border: #000000 solid;
+        border-width: 1px;
 }
 
 label {
@@ -167,6 +169,7 @@ div[class=canvas-container] {
 div[class=periodo] {
     display: inline-grid;
     grid-template-columns: auto auto auto;
+    
     
 }
 
