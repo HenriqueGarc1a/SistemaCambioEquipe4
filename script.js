@@ -363,6 +363,7 @@ function start(){
   document.getElementById('input-quantia').value = 1.00;
   document.getElementById('opcoes1').selectedIndex = 9;
   document.getElementById('opcoes2').selectedIndex = 2;
+  document.getElementById('opcoes3').selectedIndex = 8;
   document.getElementById('input-conversão').value = (1/valores[2]).toFixed(2);
   document.getElementById('bandeira1').src = flags[9];
   document.getElementById('bandeira2').src = flags[2];
