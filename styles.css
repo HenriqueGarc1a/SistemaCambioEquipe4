@@ -50,6 +50,7 @@ header {
     min-width: 100%;
     width: 100%;
     height: 150px;
+    z-index: 1;
 }
 
 .h1{
@@ -59,7 +60,7 @@ header {
     height: 100px;
     display: grid;
     grid-template-columns: auto auto;
-    background-color: #1A73E8;
+    background-color: #1d2936;
     align-content: center;
     font-family: Impact, fantasy;
 }
@@ -69,7 +70,7 @@ header {
     width: 100%;
     min-width: 100%;
     height: 50px;
-    background-color: #0d356a;
+    background-color: #009cde;
 
 
 
@@ -197,7 +198,8 @@ div[class=canvas-container] {
     margin: auto;
     padding: 20px;
     border-radius: 10px;
-    margin-top: 350px;
+    margin-top: 250px;
+    margin-bottom: 100px;
 
 }
 
@@ -220,4 +222,5 @@ div[class=datas] {
     position: relative;
     max-width: 100px;
     left: 120px;
+    
 }
