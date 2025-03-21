@@ -29,6 +29,11 @@ document.getElementById('opcoes2').addEventListener('change', function(event){
 
 document.getElementById('opcoes3').addEventListener('change', function(event){
     getFlutuacao(document.getElementById('opcoes3').selectedIndex)
+    if(document.getElementById('opcoes3').selectedIndex <=1)
+    document.getElementById('bandeira3').src = flags[document.getElementById('opcoes3').selectedIndex];
+    else
+    document.getElementById('bandeira3').src = flags[document.getElementById('opcoes3').selectedIndex+1];
+
     chart.update();
     setTimeout(() => {
       
@@ -368,6 +373,7 @@ function start(){
   document.getElementById('opcoes1').selectedIndex = 9;
   document.getElementById('opcoes2').selectedIndex = 2;
   document.getElementById('opcoes3').selectedIndex = 8;
+  document.getElementById('bandeira3').src = flags[document.getElementById('opcoes3').selectedIndex+1];
   document.getElementById('input-conversão').value = (1/valores[2]).toFixed(2);
   document.getElementById('bandeira1').src = flags[9];
   document.getElementById('bandeira2').src = flags[2];

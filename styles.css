@@ -189,7 +189,7 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-#bandeira1, #bandeira2 {
+#bandeira1, #bandeira2,#bandeira3 {
         width: 45px;
         height: 30px;
         margin-top: 8px;
@@ -222,7 +222,7 @@ div[class=canvas-container] {
 
 div[class=periodo] {
     display: inline-grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     
     
 }
@@ -239,6 +239,6 @@ div[class=datas] {
     border: 0;
     position: relative;
     max-width: 100px;
-    left: 90px;
+    left: 50px;
     
 }
