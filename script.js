@@ -6,7 +6,6 @@ setEntrada = false; // false(input da direita e entrada) true(input da esquerda 
 flutuacoDiaT = [];
 flutuacoDia = [];
 flutuacoValor = [];
-initgraph = 0;
  // matriz que guarda as datas e os valores do dolar para real no tempo
 // sempre que algo é digitado em algum input esse metodo e chamado;
 
@@ -277,7 +276,7 @@ function inverter() {
 function setPeriodo(x){
 
   chart.options.scales.xAxes[0].ticks.min = x;
-
+  document.getElementById('datainicio').innerHTML = flutuacoDia[x];
   chart.update()
 
 }
@@ -290,29 +289,28 @@ const ctx = document.getElementById("myChart").getContext("2d");
 chart = new Chart(ctx, {
   type: "line",
   data: {
-    labels: flutuacoDiaT, // Certifique-se de que tem 360 elementos
+    labels: flutuacoDiaT,
     datasets: [{
+      label: "",
       pointRadius: 0,
       fill: false,
-      tension: 0, // Em versões recentes, use `tension` em vez de `lineTension`
+      tension: 0, 
       borderColor: "rgb(0, 0, 0)",
-      data: flutuacoValor // Certifique-se de que tem 360 elementos
+      data: flutuacoValor 
     }]
   },
   options: {
-    plugins: {
-      legend: {
-        display: true,
-      }
-    },
+    legend: {
+      display: false 
+   },
     scales: {
-     
-      xAxes: [{ticks: {min: initgraph, max:359}}]
-     
+      xAxes: [{ticks: {min: 0, max:359,
+        display: false, 
+        fontSize: 0
+      }}]
     }
-    ,
-  
   }
+
 });
 
 
@@ -337,6 +335,8 @@ function start(){
   document.getElementById('bandeira1').src = flags[9];
   document.getElementById('bandeira2').src = flags[2];
   document.getElementById('saida').innerHTML = `USD 1.00 = <span class="destaque-cor">BRL ${(1 / valores[2]).toFixed(6)}</span>`;
+  document.getElementById('datafim').innerHTML = flutuacoDia[359];
+  document.getElementById('datainicio').innerHTML = flutuacoDia[0];
 }
 
 

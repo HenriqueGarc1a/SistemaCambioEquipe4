@@ -9,6 +9,15 @@
     vertical-align: middle;
     margin-left: 10px;
     margin-right: 10px;
+
+    border-radius: 50%;
+    border: transparent;
+    background-color: transparent;
+    background-image: url(Imagens/arrow-left-right-fill.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
 }
 
 #saida{
@@ -61,7 +70,7 @@ body {
 div[class=container] {
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: white;
     width: fit-content;
     height: fit-content;
     margin: auto;
@@ -107,17 +116,6 @@ select:hover{
     cursor: pointer;
 }
 
-button {
-    border-radius: 50%;
-    border: transparent;
-    background-color: transparent;
-    background-image: url(Imagens/arrow-left-right-fill.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 50px;
-    width: 50px;
-}
-
 button:hover {
     cursor: pointer;
 }
@@ -150,4 +148,43 @@ label {
 p {
     font-size: 1.6rem;
     
+}
+
+div[class=canvas-container] {
+    display: inline-grid;
+    grid-template-columns: auto;
+    flex-direction: column;
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 350px;
+
+}
+
+div[class=periodo] {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    
+}
+
+div[class=datas] {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    
+}
+
+
+
+.Periodo{
+    
+    background-color: #33ff00;
+    border-radius: 0%;
+    position: relative;
+    max-width: 100px;
+    left: 120px;
+ 
+
 }

@@ -74,10 +74,14 @@
     </div>    
 
     <div class="canvas-container">
-        <button  onclick="setPeriodo(0)">12 Meses</button>
-        <button  onclick="setPeriodo(180)">¨6 Meses</button>
-        <button  onclick="setPeriodo(320)">1 Mes</button>
-        <canvas id="myChart" style="width:100%;min-width:1000px"></canvas>
+        <div class = "periodo">
+            <button  class = "Periodo" onclick="setPeriodo(0)">12 Meses</button>
+            <button  class = "Periodo" onclick="setPeriodo(180)">6 Meses</button>
+            <button  class = "Periodo" onclick="setPeriodo(320)">1 Mes</button>
+        </div>
+        
+        <canvas id="myChart" style="min-height:600px;max-width:1080px"></canvas>
+        <div class = "datas"><p id = 'datainicio'></p> <p id = "datafim"></p></div>
     </div>
 
     <script src="script.js"></script>
