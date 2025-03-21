@@ -25,7 +25,7 @@
     font-weight: 600;
 }
 .destaque-cor{
-    color: #33ff00; 
+    color: #009cde; 
     font-weight: bold; 
 }
 
@@ -39,8 +39,7 @@
 }
 
 #myChart{
-    background-color: #fff;
-    border-radius: 10px;    
+    border-radius: 10px; 
 }
 
 header {
@@ -62,9 +61,10 @@ body {
     justify-content: flex-start; /* Alinha os elementos no topo */
     height: auto; /* Permite que o conteúdo ultrapasse a altura da janela */
     font-family: Arial, sans-serif;
-    background-color: #1b3812;
+    background-color: #1d2936;
     margin: 0;
     padding: 0;
+    color: #0E141B;
 }
 
 div[class=container] {
@@ -99,7 +99,7 @@ div[class=input-grupo] {
 div[class=input] {
     display: flex;
     border-radius: 6px;
-    border: 1px solid #000000;
+    border: 2px solid #1D2936;
     background-color: #ffffff;
     margin-top: 10px;
 }
@@ -139,7 +139,7 @@ input[type=number] {
         width: 45px;
         height: 30px;
         margin-top: 8px;
-        border: #000000 solid;
+        border: #1D2936 solid;
         border-width: 1px;
 }
 
@@ -156,7 +156,7 @@ div[class=canvas-container] {
     display: inline-grid;
     grid-template-columns: auto;
     flex-direction: column;
-    background-color: white;
+    background-color: #4A5A6A;
     width: fit-content;
     height: fit-content;
     margin: auto;
@@ -176,18 +176,13 @@ div[class=periodo] {
 div[class=datas] {
     display: inline-grid;
     grid-template-columns: auto auto;
-    
+    grid-column-gap: 75%;
 }
 
-
-
 .Periodo{
-    
-    background-color: #33ff00;
-    border-radius: 0%;
+    background-color: #009cde;
+    border: 0;
     position: relative;
     max-width: 100px;
     left: 120px;
- 
-
 }
