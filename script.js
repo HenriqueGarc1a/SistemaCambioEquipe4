@@ -196,7 +196,7 @@ function getCambio(){
        
     }
 
-    document.getElementById("saida").innerHTML = `${getPfix(entrada1)} 1.00 = <span class="destaque-cor">${getPfix(entrada2)} ${w.toFixed(2)}</span>`;  
+    document.getElementById("saida").innerHTML = `${getPfix(entrada1)} 1.00 = <span class="destaque-cor">${getPfix(entrada2)} ${w.toFixed(6)}</span>`;  
 }
 
 // retorna a abreviacao da moeda com base em x
@@ -321,6 +321,16 @@ chart = new Chart(ctx, {
 
 });
 
+function s(x) {
+  
+  window.scroll({
+    top: x,    
+    left: 0,  
+    behavior: "instant" 
+  });
+
+ 
+}
 
 
 
@@ -346,6 +356,7 @@ function start(){
   document.getElementById('datafim').innerHTML = flutuacoDia[359];
   document.getElementById('datainicio').innerHTML = flutuacoDia[0];
 }
+
 
 
 
