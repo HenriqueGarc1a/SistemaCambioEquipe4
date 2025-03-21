@@ -112,11 +112,12 @@ div[class=container] {
     margin: auto;
     padding: 20px;
     border-radius: 10px;
-    margin-top: 350px;
+    margin-top: 250px;
 
 }
 
 div[class=valores] {
+    
     display: flex;
     justify-content: space-evenly;
 }
@@ -199,8 +200,8 @@ div[class=canvas-container] {
     margin: auto;
     padding: 20px;
     border-radius: 10px;
-    margin-top: 250px;
-    margin-bottom: 100px;
+    margin-top: 200px;
+    margin-bottom: 50px;
 
 }
 
