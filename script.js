@@ -6,7 +6,7 @@ setEntrada = false; // false(input da direita e entrada) true(input da esquerda 
 flutuacoDiaT = [];
 flutuacoDia = [];
 flutuacoValor = [];
-g = ["https://economia.awesomeapi.com.br/json/daily/ARS-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/AUD-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/CHF-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/CAD-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/EUR-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/GBP-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/JPY-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/KRW-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/USD-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0"]
+g = ["https://economia.awesomeapi.com.br/json/daily/ARS-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/AUD-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/CHF-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/CAD-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/EUR-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/GBP-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/JPY-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/USD-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0"]
  // matriz que guarda as datas e os valores do dolar para real no tempo
 // sempre que algo é digitado em algum input esse metodo e chamado;
 
@@ -31,6 +31,8 @@ document.getElementById('opcoes3').addEventListener('change', function(event){
     getFlutuacao(document.getElementById('opcoes3').selectedIndex)
     if(document.getElementById('opcoes3').selectedIndex <=1)
     document.getElementById('bandeira3').src = flags[document.getElementById('opcoes3').selectedIndex];
+    else if(document.getElementById('opcoes3').selectedIndex >= 7)
+    document.getElementById('bandeira3').src = flags[document.getElementById('opcoes3').selectedIndex+2];
     else
     document.getElementById('bandeira3').src = flags[document.getElementById('opcoes3').selectedIndex+1];
 
@@ -72,6 +74,7 @@ async function getFlutuacao(i) {
 
     const dataF = await response.json();
     
+    console.log(dataF.length)
     setMatrix(dataF);
     
   } catch (error) {
@@ -372,8 +375,8 @@ function start(){
   document.getElementById('input-quantia').value = 1.00;
   document.getElementById('opcoes1').selectedIndex = 9;
   document.getElementById('opcoes2').selectedIndex = 2;
-  document.getElementById('opcoes3').selectedIndex = 8;
-  document.getElementById('bandeira3').src = flags[document.getElementById('opcoes3').selectedIndex+1];
+  document.getElementById('opcoes3').selectedIndex = 7;
+  document.getElementById('bandeira3').src = flags[document.getElementById('opcoes3').selectedIndex+2];
   document.getElementById('input-conversão').value = (1/valores[2]).toFixed(2);
   document.getElementById('bandeira1').src = flags[9];
   document.getElementById('bandeira2').src = flags[2];
