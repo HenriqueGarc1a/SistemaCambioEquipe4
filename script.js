@@ -6,6 +6,7 @@ setEntrada = false; // false(input da direita e entrada) true(input da esquerda 
 flutuacoDiaT = [];
 flutuacoDia = [];
 flutuacoValor = [];
+pctchange = [];
 g = ["https://economia.awesomeapi.com.br/json/daily/ARS-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/AUD-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/CHF-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/CAD-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/EUR-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/GBP-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/JPY-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0","https://economia.awesomeapi.com.br/json/daily/USD-BRL/360?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0"]
  // matriz que guarda as datas e os valores do dolar para real no tempo
 // sempre que algo é digitado em algum input esse metodo e chamado;
@@ -49,7 +50,7 @@ document.getElementById('opcoes3').addEventListener('change', function(event){
 async function getCotacao() {
     try {
       
-      const response = await fetch("https://economia.awesomeapi.com.br/json/last/BRL-USD,JPY-USD,CAD-USD,ARS-USD,AUD-USD,GBP-USD,KRW-USD,EUR-USD,CHF-USD?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0");
+      const response = await fetch("https://economia.awesomeapi.com.br/json/last/BRL-USD,JPY-USD,CAD-USD,ARS-USD,AUD-USD,GBP-USD,KRW-USD,EUR-USD,CHF-USD,BRL-GBP,BRL-EUR?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0");
   
       if (!response.ok) {
         throw new Error(`Erro HTTP! Status: ${response.status}`);
@@ -57,7 +58,7 @@ async function getCotacao() {
 
       const data = await response.json();
       setCambios(data)
-
+      setpct(data)
     } catch (error) {
       console.error("Erro ao buscar a taxa de câmbio:", error);
     }
@@ -149,6 +150,16 @@ function setCambios(data){
   valores.push(eval(data.KRWUSD.bid))
   valores.push(1)
   
+}
+
+function setpct(data){
+
+  pctchange.push(eval(data.BRLUSD.pctChange))
+  pctchange.push(eval(data.BRLEUR.pctChange))
+  pctchange.push(eval(data.BRLGBP.pctChange))
+
+  console.log(pctchange)
+
 }
 
 //funcao que coloca os links das imagens das bandeiras em um vetor;
@@ -393,6 +404,9 @@ function start(){
   document.getElementById('saida').innerHTML = `USD 1.00 = <span class="destaque-cor">BRL ${(1 / valores[2]).toFixed(6)}</span>`;
   document.getElementById('datafim').innerHTML = flutuacoDia[359];
   document.getElementById('datainicio').innerHTML = flutuacoDia[0];
+  document.getElementById("dol").innerHTML = pctchange[0].toFixed(2)+"%";
+  document.getElementById("eur").innerHTML = pctchange[1].toFixed(2)+"%";
+  document.getElementById("lib").innerHTML = pctchange[2].toFixed(2)+"%";
 }
 
 
