@@ -340,7 +340,10 @@ chart = new Chart(ctx, {
           callback: function(value) {
             return "R$" + value.toFixed(2);
           },
-          color: "#0E141B" // Substitui fontColor
+          color: "#0E141B", // Substitui fontColor
+          font: {
+            size: 16
+          }
         }
       }
     }
