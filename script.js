@@ -347,15 +347,12 @@ chart = new Chart(ctx, {
   }
 });
 
-function s(x) {
+function s() {
   
-  window.scroll({
-    top: x,    
-    left: 0,  
-    behavior: "instant" 
-  });
+  document.getElementById("grafico").style.display = "block";
 
- 
+  document.getElementById("cambio").style.display = "none";
+
 }
 
 

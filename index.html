@@ -17,12 +17,12 @@
             <h1>Moeda Master</h1>
         </div>
         <div class="h2">  
-            <button onclick ="s(0)">Conversor de Moedas Master</button>
-            <button onclick ="s(600)">Grafico de Cotação</button>
+            <button onclick ="s()">Conversor de Moedas Master</button>
+            <button onclick ="s()">Grafico de Cotação</button>
         </div>
     </header>
 
-    <div class="container">
+    <div class="container" id = "cambio">
         <div class="titulo"><h1></h1></div>
         <div class="valores">
             <div class="input-grupo">
@@ -79,7 +79,7 @@
         </div>
     </div>    
 
-    <div class="canvas-container">
+    <div class="canvas-container" id = "grafico">
         <div class = "periodo">
             <img id="bandeira3" alt="deu pau">
             <select id="opcoes3">
