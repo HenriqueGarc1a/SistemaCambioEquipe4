@@ -342,7 +342,7 @@ chart = new Chart(ctx, {
           },
           color: "#0E141B", // Substitui fontColor
           font: {
-            size: 16
+            size: 18
           }
         }
       }
