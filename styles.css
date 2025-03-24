@@ -53,6 +53,7 @@ header {
     color: #E3C278;
     text-shadow: 2px 2px 5px #E3C278;
     background-color: white;
+    
 }
 
 .h1{
@@ -116,7 +117,7 @@ body {
     flex-direction: column; /* Empilha os elementos verticalmente */
     align-items: center;
     justify-content: flex-start; /* Alinha os elementos no topo */
-    height: cover; /* Permite que o conteúdo ultrapasse a altura da janela */
+    height: fit-content; /* Permite que o conteúdo ultrapasse a altura da janela */
     font-family: Arial, sans-serif;
     background-color: #1d2936;
     margin: 0;
@@ -133,7 +134,7 @@ div[class=container] {
     margin: auto;
     padding: 20px;
     border-radius: 32px;
-    margin-top: 18%;
+    margin-top: 15%;
     display: block;
 
 }
@@ -153,6 +154,7 @@ div[class=conversor] {
 
 div[class=input-grupo] {
     max-width: min-content;
+    
 }
 
 div[class=input] {
