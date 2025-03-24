@@ -216,21 +216,20 @@ div[class=canvas-container] {
     grid-template-columns: auto;
     flex-direction: column;
     background-color: #4A5A6A;
-    width: fit-content;
-    height: fit-content;
+    width: 60%;
+    height: 60%;
+    min-height:350px;
+    min-width:800px;
     margin: auto;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 1%;
+    border-radius: 1%;
     display: none;
-    margin-top: 160px;
-
+    margin-top: 8.7%;
 }
 
 div[class=periodo] {
     display: inline-grid;
     grid-template-columns: auto auto auto auto auto;
-    
-    
 }
 
 div[class=datas] {
@@ -246,5 +245,4 @@ div[class=datas] {
     position: relative;
     max-width: 100px;
     left: 50px;
-    
 }
