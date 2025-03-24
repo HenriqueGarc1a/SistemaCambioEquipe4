@@ -63,7 +63,7 @@ async function getCotacao() {
     }
 }
 
-async function getFlutuacao(i) {
+  async function getFlutuacao(i) {
   try {
     
     const response = await fetch(g[i]);
@@ -365,7 +365,7 @@ function s(x) {
   
   getCotacao();
   getBandeiras();
-  getFlutuacao(8) 
+  getFlutuacao(7) 
 
   setTimeout(start, 300);
   
