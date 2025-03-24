@@ -347,12 +347,22 @@ chart = new Chart(ctx, {
   }
 });
 
-function s() {
+function trocapagina(x) {
   
+  if(x){
   document.getElementById("grafico").style.display = "block";
 
   document.getElementById("cambio").style.display = "none";
 
+  }
+  else{
+
+  document.getElementById("cambio").style.display = "block";
+
+  document.getElementById("grafico").style.display = "none";
+
+
+  }
 }
 
 
