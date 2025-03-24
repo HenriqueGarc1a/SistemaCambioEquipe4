@@ -172,7 +172,7 @@ function setFlags(dataB){
    
     }
 
-    flags.splice(5,0,'/Imagens/bandeira-uniao-europeia.webp')
+    flags.splice(5,0,'Imagens/bandeira-uniao-europeia.webp')
 }
 
 
