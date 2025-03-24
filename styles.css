@@ -34,7 +34,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 200px;
 }
 
 #myChart{
@@ -48,17 +47,20 @@ header {
     grid-template-columns: auto;
     min-width: 100%;
     width: 100%;
-    height: 150px;
+    height: 15%;
+    min-height: 100px;
     z-index: 1;
     color: #E3C278;
     text-shadow: 2px 2px 5px #E3C278;
+    background-color: white;
 }
 
 .h1{
-    min-height: 100px;
+
+    min-height: 100%;
     width: 100%;
     min-width: 100%;
-    height: 100px;
+    height: 100%;
     display: grid;
     grid-template-columns: auto auto;
     background-color: #1d2936;
@@ -67,10 +69,10 @@ header {
 }
 
 .h2{
-    min-height: 50px;
+    min-height: 200%;
     width: 100%;
     min-width: 100%;
-    height: 50px;
+    max-height:  200%;
     background-color: #009cde;
     align-content: center;
 
@@ -89,6 +91,10 @@ header {
 
     border: #1d2936 solid;
     border-width: 3px;
+    margin-top: -3px;
+    margin-bottom: -3px;
+    margin-left: 22px;
+    margin-right: -2px;
 }
 
 #logo{
