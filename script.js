@@ -75,7 +75,6 @@ async function getCotacao() {
 
     const dataF = await response.json();
     
-    console.log(dataF.length)
     setMatrix(dataF);
     
   } catch (error) {
@@ -157,8 +156,6 @@ function setpct(data){
   pctchange.push(eval(data.BRLUSD.pctChange))
   pctchange.push(eval(data.BRLEUR.pctChange))
   pctchange.push(eval(data.BRLGBP.pctChange))
-
-  console.log(pctchange)
 
 }
 
@@ -404,9 +401,15 @@ function start(){
   document.getElementById('saida').innerHTML = `USD 1.00 = <span class="destaque-cor">BRL ${(1 / valores[2]).toFixed(6)}</span>`;
   document.getElementById('datafim').innerHTML = flutuacoDia[359];
   document.getElementById('datainicio').innerHTML = flutuacoDia[0];
-  document.getElementById("dol").innerHTML = pctchange[0].toFixed(2)+"%";
-  document.getElementById("eur").innerHTML = pctchange[1].toFixed(2)+"%";
-  document.getElementById("lib").innerHTML = pctchange[2].toFixed(2)+"%";
+  for(i = 0; i < pctchange.length; i++) {
+    if(pctchange[i] >= 0) {
+      document.querySelectorAll(".pcthj")[i].innerText = pctchange[i].toFixed(2) + "%";
+      document.querySelectorAll(".pcthj")[i].style.color = "green";
+    } else {
+      document.querySelectorAll(".pcthj")[i].innerHTML = (pctchange[i].toFixed(2) * (-1)) + "%";
+      document.querySelectorAll(".pcthj")[i].style.color = "red";
+    }
+  }
 }
 
 
