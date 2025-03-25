@@ -59,7 +59,7 @@ header {
     min-width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: 67% 10vw 10vw 10vw;
     background-color: #1d2936;
     align-content: center;
     
@@ -106,20 +106,6 @@ header {
     left: 50px;
 
 }
-
-#title{
-
-    background-image: url("Imagens/title.png");
-    background-size: cover;
-    min-height: 80px;
-    max-height: 80px;
-    min-width: 100px;
-    max-width: 100px;
-    position: relative;
-    left: 50px;
-
-}
-
 
 body {
     position: relative;
@@ -237,7 +223,7 @@ div[class=canvas-container] {
     padding: 1%;
     border-radius: 1%;
     display: none;
-    margin-top: 24vh;
+    margin-top: 20vh;
 }
 
 div[class=periodo] {
@@ -263,6 +249,7 @@ div[class=periodo] {
 
 }
 
+
 .Periodo:hover{
 
     border:#1d2936 solid 3px;
@@ -270,5 +257,21 @@ div[class=periodo] {
 
 
 
+}
+
+
+.hj{
+    width: fit-content;
+    display: block;
+    color: #e3c278;
+    border: 3px solid #009cde;
+    border-radius: 10px;
+    padding: 5px;
+    justify-content: center;
+}
+
+.hj p {
+    margin: 0;
+    text-wrap: nowrap;
 }
 
