@@ -417,7 +417,6 @@ function trocapagina(x) {
   
 
 function start(){
- 
   setPeriodo(0)
   chart.update()
   document.getElementById('input-quantia').value = 1.00;
@@ -429,8 +428,6 @@ function start(){
   document.getElementById('bandeira1').src = flags[9];
   document.getElementById('bandeira2').src = flags[2];
   document.getElementById('saida').innerHTML = `USD 1.00 = <span class="destaque-cor">BRL ${(1 / valores[2]).toFixed(6)}</span>`;
-  document.getElementById('datafim').innerHTML = flutuacoDia[359];
-  document.getElementById('datainicio').innerHTML = flutuacoDia[0];
   for(i = 0; i < pctchange.length; i++) {
     if(pctchange[i] >= 0) {
       document.querySelectorAll(".pcthj")[i].innerText = "▲" + pctchange[i].toFixed(2) + "%";
