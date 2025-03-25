@@ -403,10 +403,10 @@ function start(){
   document.getElementById('datainicio').innerHTML = flutuacoDia[0];
   for(i = 0; i < pctchange.length; i++) {
     if(pctchange[i] >= 0) {
-      document.querySelectorAll(".pcthj")[i].innerText = pctchange[i].toFixed(2) + "%";
+      document.querySelectorAll(".pcthj")[i].innerText = "▲" + pctchange[i].toFixed(2) + "%";
       document.querySelectorAll(".pcthj")[i].style.color = "green";
     } else {
-      document.querySelectorAll(".pcthj")[i].innerHTML = (pctchange[i].toFixed(2) * (-1)) + "%";
+      document.querySelectorAll(".pcthj")[i].innerHTML = "▼" + (pctchange[i].toFixed(2) * (-1)) + "%";
       document.querySelectorAll(".pcthj")[i].style.color = "red";
     }
   }
