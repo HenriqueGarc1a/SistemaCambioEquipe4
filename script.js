@@ -302,8 +302,36 @@ function inverter() {
 }
 
 function setPeriodo(x) {
+
+  switch(x){
+
+    case 0: 
+
+    document.getElementById("ano").style.backgroundColor = "#1A73E8";
+    document.getElementById("mmes").style.backgroundColor = "#4A5A6A";
+    document.getElementById("mes").style.backgroundColor = "#4A5A6A";
+    break;
+
+    case 180:
+
+      document.getElementById("ano").style.backgroundColor = "#4A5A6A";
+    document.getElementById("mmes").style.backgroundColor = "#1A73E8";
+    document.getElementById("mes").style.backgroundColor = "#4A5A6A";
+
+    break;
+
+    case 320:
+      document.getElementById("ano").style.backgroundColor = "#4A5A6A";
+    document.getElementById("mes").style.backgroundColor = "#1A73E8";
+    document.getElementById("mmes").style.backgroundColor = "#4A5A6A";
+    break;
+
+
+
+
+  }
+
   chart.options.scales.x.min = x;
-  document.getElementById('datainicio').innerHTML = flutuacoDia[x];
   chart.update();
 }
 
@@ -385,10 +413,12 @@ function trocapagina(x) {
   getBandeiras();
   getFlutuacao(7) 
 
-  setTimeout(start, 300);
+  setTimeout(start, 500);
   
 
 function start(){
+ 
+  setPeriodo(0)
   chart.update()
   document.getElementById('input-quantia').value = 1.00;
   document.getElementById('opcoes1').selectedIndex = 9;

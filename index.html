@@ -105,13 +105,13 @@
                 <option>JPY</option>
                 <option>USD</option>
             </select>
-            <button  class = "Periodo" onclick="setPeriodo(0)">12 Meses</button>
-            <button  class = "Periodo" onclick="setPeriodo(180)">6 Meses</button>
-            <button  class = "Periodo" onclick="setPeriodo(320)">1 Mes</button>
+            <button  class = "Periodo" onclick="setPeriodo(0)" id = "ano">1 ANO</button>
+            <button  class = "Periodo" onclick="setPeriodo(180)" id = "mmes">6 MESES</button>
+            <button  class = "Periodo" onclick="setPeriodo(320)" id = "mes">1 MES</button>
         </div>
         
         <canvas id="myChart" style="width: 100%;height: 100%;"></canvas>
-        <div class = "datas"><p id = 'datainicio'></p> <p id = "datafim"></p></div>
+       
     </div>
 
     <script src="script.js"></script>

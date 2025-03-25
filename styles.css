@@ -244,30 +244,31 @@ div[class=periodo] {
     display: inline-grid;
     grid-template-columns: auto auto auto auto auto;
     justify-content: center;
-    align-items: center;
-}
-
-div[class=datas] {
-    display: inline-grid;
-    grid-template-columns: auto auto;
-    grid-column-gap: 68%;
-    align-content: center;
+  
 }
 
 .Periodo{
-    background-color: #009cde;
+    background-color: #4A5A6A;
     border: 0;
     position: relative;
-    max-width: fit-content;
-    min-width: fit-content;
-    max-height: fit-content;
-    min-height: fit-content;
-    margin-right: 100px;
-}
-
-.hj{
-
-  
-
+    min-height: 30px;
+    min-width: 70px;
+    max-width: 70px;
+    max-height: 30px;
+    margin-left: clamp(30px, 5vw, 80px);;
+    margin-top: 1.2vh;
+    font-size: 12px;
+    align-content: center;
+    border-radius: 10px;
 
 }
+
+.Periodo:hover{
+
+    border:#1d2936 solid 3px;
+
+
+
+
+}
+
