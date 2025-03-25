@@ -4,6 +4,11 @@
     font-size: 30px;
 }
 
+#cambio{
+    min-width: 500px;
+    min-height: 50px;
+}
+
 #botao-troca{
     margin-top: 36px;
     vertical-align: middle;
@@ -120,7 +125,7 @@ body {
     margin: 0;
     padding: 0;
     color: #0E141B;
-}
+}   
 
 div[class=container] {
     display: flex;
@@ -128,6 +133,8 @@ div[class=container] {
     background-color: #4A5A6A;
     width: 80%;
     height: 33%;
+    min-height: 150px;
+    min-width: 500px;
     margin: auto;
     padding: 20px;
     border-radius: 32px;
@@ -137,7 +144,7 @@ div[class=container] {
 }
 
 div[class=valores] {
-    
+    position: relative;
     display: flex;
     justify-content: space-evenly;
 }
@@ -150,8 +157,12 @@ div[class=conversor] {
 }
 
 div[class=input-grupo] {
-    max-width: min-content;
-    
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    min-width: 1px;
+    box-sizing: border-box;
+    transition: width 0.3s ease-in-out;
 }
 
 div[class=input] {
@@ -169,7 +180,15 @@ input, select {
     font-size: 1.8rem;
     font-weight: 400;
     padding: 8px;
+    width: 100%; 
+    max-width: 500px; 
+    box-sizing: border-box; 
 }
+
+select {
+    min-width: 95px;
+}
+
 
 select:hover{
     cursor: pointer;
@@ -194,11 +213,13 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-#bandeira1, #bandeira2,#bandeira3 {
-        width: 45px;
-        height: 30px;
-        margin-top: 8px;
-        border-width: 1px;
+#bandeira1, #bandeira2, #bandeira3 {
+    width: 10vw; 
+    height: auto; 
+    max-width: 45px; 
+    max-height: 30px;
+    margin-top: 8px;
+    border-width: 1px;
 }
 
 label {
