@@ -29,7 +29,12 @@ document.getElementById('opcoes2').addEventListener('change', function(event){
 });
 
 document.getElementById('opcoes3').addEventListener('change', function(event){
+
+ 
+    
+    
     getFlutuacao(document.getElementById('opcoes3').selectedIndex)
+
     if(document.getElementById('opcoes3').selectedIndex <=1)
     document.getElementById('bandeira3').src = flags[document.getElementById('opcoes3').selectedIndex];
     else if(document.getElementById('opcoes3').selectedIndex >= 7)
@@ -42,7 +47,7 @@ document.getElementById('opcoes3').addEventListener('change', function(event){
       
       chart.update();
 
-    }, 200);
+    }, 1000);
 });
 
 // puxa dados da API dos cambios
@@ -80,6 +85,8 @@ async function getCotacao() {
   } catch (error) {
     console.error("Erro ao buscar a taxa de câmbio:", error);
   }
+
+ 
 }
 
 
@@ -303,6 +310,7 @@ function inverter() {
 
 function setPeriodo(x) {
 
+  
   switch(x){
 
     case 0: 
@@ -413,12 +421,11 @@ function trocapagina(x) {
   getBandeiras();
   getFlutuacao(7) 
 
-  setTimeout(start, 500);
+  setTimeout(start,1000);
   
 
 function start(){
- 
-  setPeriodo(0)
+
   chart.update()
   document.getElementById('input-quantia').value = 1.00;
   document.getElementById('opcoes1').selectedIndex = 9;
@@ -429,8 +436,6 @@ function start(){
   document.getElementById('bandeira1').src = flags[9];
   document.getElementById('bandeira2').src = flags[2];
   document.getElementById('saida').innerHTML = `USD 1.00 = <span class="destaque-cor">BRL ${(1 / valores[2]).toFixed(6)}</span>`;
-  document.getElementById('datafim').innerHTML = flutuacoDia[359];
-  document.getElementById('datainicio').innerHTML = flutuacoDia[0];
   for(i = 0; i < pctchange.length; i++) {
     if(pctchange[i] >= 0) {
       document.querySelectorAll(".pcthj")[i].innerText = "▲" + pctchange[i].toFixed(2) + "%";
@@ -440,6 +445,7 @@ function start(){
       document.querySelectorAll(".pcthj")[i].style.color = "red";
     }
   }
+  
 }
 
 
