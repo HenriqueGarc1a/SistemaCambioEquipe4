@@ -77,16 +77,16 @@ header {
     max-height:  150%;
     background-color: #009cde;
     align-content: center;
-
+    display: flex;
 }
 
 .h2 > button{
-
     background-color: #009cde;
     border: none;
     margin-left: 25px;
     border-radius: 32px;
-
+    height: min-content;
+    align-self: center;
 }
 
 .h2 > button:hover{
@@ -118,8 +118,8 @@ header {
     background-size: cover;
     min-height: 45px;
     max-height: 45px;
-    min-width: 330px;
-    max-width: 330px;
+    min-width: 335px;
+    max-width: 335px;
     position: relative;
     margin: auto;
     margin-left: 50px;
@@ -303,3 +303,11 @@ div[class=periodo] {
     text-wrap: nowrap;
 }
 
+#lingua {
+    position: absolute;
+    font-size: unset;
+    width: fit-content;
+    margin-left: 93%;
+    height: min-content;
+    align-self: center;
+}

@@ -50,6 +50,33 @@ document.getElementById('opcoes3').addEventListener('change', function(event){
     }, 1000);
 });
 
+document.getElementById("lingua").addEventListener("change", () => {
+  if(document.getElementById("lingua").selectedIndex < 1) {
+    document.getElementById("input-quantia-label").innerHTML = "Quantia";
+    document.getElementById("input-conversão-label").innerHTML = "Converter para";
+    document.getElementById("dolhj").innerHTML = "Dólar hoje";
+    document.getElementById("eurhj").innerHTML = "Euro hoje";
+    document.getElementById("libhj").innerHTML = "Libra hoje";
+    document.getElementById("pagina-conversor").innerHTML = "Conversor de Moedas Master";
+    document.getElementById("pagina-grafico").innerHTML = "Gráfico de Cotações";
+    document.getElementById("ano").innerHTML = "1 Ano";
+    document.getElementById("mes").innerHTML = "1 Mês";
+    document.getElementById("mmes").innerHTML = "6 Meses";
+    } else {
+    document.getElementById("input-quantia-label").innerHTML = "Quantity";
+    document.getElementById("input-conversão-label").innerHTML = "Convert to";
+    document.getElementById("dolhj").innerHTML = "Dollar today";
+    document.getElementById("eurhj").innerHTML = "Euro today";
+    document.getElementById("libhj").innerHTML = "Pound today";
+    document.getElementById("pagina-conversor").innerHTML = "Coin Master Converter";
+    document.getElementById("pagina-grafico").innerHTML = "Quote Chart";
+    document.getElementById("ano").innerHTML = "1 Year";
+    document.getElementById("mes").innerHTML = "1 Month";
+    document.getElementById("mmes").innerHTML = "6 Months";
+  }
+  
+})
+
 // puxa dados da API dos cambios
 
 async function getCotacao() {
@@ -415,7 +442,6 @@ function trocapagina(x) {
 
 
 
-
   
   getCotacao();
   getBandeiras();
@@ -425,8 +451,8 @@ function trocapagina(x) {
   
 
 function start(){
-
   chart.update()
+  document.getElementById("lingua").selectedIndex = 0;
   document.getElementById('input-quantia').value = 1.00;
   document.getElementById('opcoes1').selectedIndex = 9;
   document.getElementById('opcoes2').selectedIndex = 2;
