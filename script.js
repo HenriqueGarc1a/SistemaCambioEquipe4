@@ -385,7 +385,7 @@ function trocapagina(x) {
   getBandeiras();
   getFlutuacao(7) 
 
-  setTimeout(start, 300);
+  setTimeout(start, 500);
   
 
 function start(){
