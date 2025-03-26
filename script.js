@@ -451,6 +451,7 @@ function trocapagina(x) {
   
 
 function start(){
+  setPeriodo(0)
   chart.update()
   document.getElementById("lingua").selectedIndex = 0;
   document.getElementById('input-quantia').value = 1.00;
