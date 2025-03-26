@@ -227,10 +227,11 @@ input[type=number] {
 }
 
 #bandeira1, #bandeira2, #bandeira3 {
-    width: 10vw; 
-    height: auto; 
     max-width: 45px; 
     max-height: 30px;
+    min-width: 45px; 
+    min-height: 30px;
+    
     margin-top: 8px;
     border-width: 1px;
 }

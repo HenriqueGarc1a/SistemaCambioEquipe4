@@ -183,6 +183,7 @@ function setCambios(data){
   valores.push(eval(data.KRWUSD.bid))
   valores.push(1)
   
+  
 }
 
 function setpct(data){
@@ -204,6 +205,7 @@ function setFlags(dataB){
     }
 
     flags.splice(5,0,'Imagens/bandeira-uniao-europeia.webp')
+   
 }
 
 
@@ -214,11 +216,7 @@ function setFlags(dataB){
 
 function getCambio(){
 
-    //if para verificar qual input e entrada e qual e saida
-
     if(setEntrada){
-
-      // buscando index para vetor de valores 
 
       select = document.getElementById("opcoes1");
       entrada1 = select.selectedIndex
@@ -390,20 +388,25 @@ chart = new Chart(ctx, {
   },
   options: {
     plugins: {
+
+      tooltip: {
+          enabled: false 
+      }
+  ,
       legend: {
         display: false
       }
     },
     scales: {
-      x: { // Antes era xAxes
+      x: {
         ticks: {
           min: 0,
           max: 359,
           display: false,
-          fontSize: 0 // Removido no Chart.js 3+, mas pode ser substituído por `font.size`
+          fontSize: 0
         }
       },
-      y: { // Antes era yAxes
+      y: { 
         grid: {
           display: false
         },
@@ -411,7 +414,7 @@ chart = new Chart(ctx, {
           callback: function(value) {
             return "R$" + value.toFixed(2);
           },
-          color: "#0E141B", // Substitui fontColor
+          color: "#0E141B", 
           font: {
             size: 18
           }
