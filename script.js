@@ -83,16 +83,14 @@ async function getCotacao() {
     try {
       
       const response = await fetch("https://economia.awesomeapi.com.br/json/last/BRL-USD,JPY-USD,CAD-USD,ARS-USD,AUD-USD,GBP-USD,KRW-USD,EUR-USD,CHF-USD,BRL-GBP,BRL-EUR?token=986495aa4c64154c4c74a5dad7b5949ff8968fed7528dff87d931c7843a67ba0");
-  
-      if (!response.ok) {
-        throw new Error(`Erro HTTP! Status: ${response.status}`);
-      }
-
+      
       const data = await response.json();
+
       setCambios(data)
       setpct(data)
+
     } catch (error) {
-      console.error("Erro ao buscar a taxa de câmbio:", error);
+      console.error("Erro:", error);
     }
 }
 
@@ -101,16 +99,12 @@ async function getCotacao() {
     
     const response = await fetch(g[i]);
 
-    if (!response.ok) {
-      throw new Error(`Erro HTTP! Status: ${response.status}`);
-    }
-
     const dataF = await response.json();
     
     setMatrix(dataF);
     
   } catch (error) {
-    console.error("Erro ao buscar a taxa de câmbio:", error);
+    console.error("Erro :", error);
   }
 
  
@@ -155,15 +149,12 @@ async function getBandeiras() {
     
     const response = await fetch("https://restcountries.com/v3.1/all");
 
-    if (!response.ok) {
-      throw new Error(`Erro HTTP! Status: ${response.status}`);
-    }
     const dataB = await response.json();
     
     setFlags(dataB)
 
   } catch (error) {
-    console.error("Erro ao buscar a taxa de câmbio:", error);
+    console.error("Erro :", error);
   }
 }
 
